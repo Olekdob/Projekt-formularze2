@@ -24,7 +24,9 @@
             var message = new MimeMessage()
             {
                 Subject = temat,
-                Body = new TextPart("plain") { Text = "Dokładnie " + odbiorca.Nazwa + ", \n\n " + treśćListu },
+
+                Body = new TextPart("plain") { Text = "Dokładnieeeeee " + odbiorca.Nazwa + ", \n\n " + treśćListu },
+
             };
             message.From.Add(new MailboxAddress(nadawca.Nazwa, nadawca.Adres));
             message.To.Add(new MailboxAddress(odbiorca.Nazwa, odbiorca.Adres));
