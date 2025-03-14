@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Schronisko>
+
+@{
+    ViewData["Title"] = "ListaSchronisk";
+}
+
+<h1>ListaSchronisk</h1>
+
+<p>
+    <a asp-action="NoweSchronisko">Dodaj nowy</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                Zdjęcie
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nazwa)
+            </th>
+            <th>
+                Miejscowość
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ocena)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                <img src="@Html.DisplayFor(modelItem => item.Zdjecie)" width="50" height="50"/>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nazwa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Miejscowosc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ocena)
+            </td>
+            <td>
+                <a asp-action="ZmienSchronisko" asp-route-id="@item.Id">Edytuj</a> |
+                    <a asp-action="Szczegoly" asp-route-id="@item.Id">Szczegóły</a> |
+                    <a asp-action="UsunSchronisko" asp-route-id="@item.Id">Usuń</a> |
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,64 @@
+﻿@model OcenySchroniskaViewModel
+
+@{
+    ViewData["Title"] = "Szczegoly";
+}
+
+<h1>Szczegóły</h1>
+
+<div>
+    <h4>Schronisko</h4>
+    <hr />
+    <div style="float:left">
+        <dl class="row">
+            <dt class="col-sm-2" style="margin-right:10px">
+                @Html.DisplayNameFor(model => model.schronisko.Nazwa)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.schronisko.Nazwa)
+            </dd>
+            <dt class="col-sm-2" style="margin-right:10px">
+                Miejscowość
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.schronisko.Miejscowosc)
+            </dd>
+            <dt class="col-sm-2" style="margin-right:10px">
+                @Html.DisplayNameFor(model => model.schronisko.Ocena)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.schronisko.Ocena)
+            </dd>
+        </dl>
+        <a asp-action="ZmienSchronisko" asp-route-id="@Model.schronisko.Id">Edytuj</a> |
+        <a asp-action="ListaSchronisk">Wróć do listy</a>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Opis
+            </th>
+            <th>
+                Ocena
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ocenaSchroniska)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Opis)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ocena)
+                </td>
+            </tr>
+        }
+
+<div style="float:left">
+    <img src="@Html.DisplayFor(model => model.schronisko.Zdjecie)" width="500" height="350" />
+</div>
