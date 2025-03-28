@@ -7,4 +7,7 @@ język: C#
 #Stażysci: Jonatan Li, Wojciech Grobelny
 
 Podział zadań:
-Do ustalenia
+Bartek- etap 1 i 2,
+Jonatan- etap 3 i 4,
+Olek- baza danych,
+Wojtek- brak zadan , spowodowanych brakiem poprzednich zaliczeń  u Pana Główczyńskiego :(
